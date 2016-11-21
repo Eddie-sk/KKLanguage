@@ -1,0 +1,28 @@
+
+
+//##################################################################################
+//#           AutoGenStrings            2016-11-08 20:25:50
+//##################################################################################
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bl8-ns-0n7"; */
+//"bl8-ns-0n7.normalTitle" = "chinese";
+
+//##################################################################################
+//#           AutoGenStrings            2016-11-09 14:21:23
+//##################################################################################
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "9iu-mk-U60"; */
+"9iu-mk-U60.title" = "第二项";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Tul-ke-zyb"; */
+"Tul-ke-zyb.normalTitle" = "中文";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "yne-CC-Q1b"; */
+"yne-CC-Q1b.title" = "第一项";
+
+//##################################################################################
+//#           AutoGenStrings            2016-11-09 14:44:54
+//##################################################################################
+
+/* Class = "UILabel"; text = "This is  a label"; ObjectID = "Ptu-aZ-aBl"; */
+"Ptu-aZ-aBl.text" = "This is  a label";

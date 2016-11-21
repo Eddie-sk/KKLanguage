@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B191555C1DD1F99A0080B469 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B191555B1DD1F99A0080B469 /* main.m */; };
+		B191555F1DD1F99A0080B469 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B191555E1DD1F99A0080B469 /* AppDelegate.m */; };
+		B19155621DD1F99A0080B469 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B19155611DD1F99A0080B469 /* ViewController.m */; };
+		B19155651DD1F99A0080B469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19155631DD1F99A0080B469 /* Main.storyboard */; };
+		B19155671DD1F99A0080B469 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19155661DD1F99A0080B469 /* Assets.xcassets */; };
+		B191556A1DD1F99A0080B469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19155681DD1F99A0080B469 /* LaunchScreen.storyboard */; };
+		B19155731DD1F9AF0080B469 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = B19155721DD1F9AF0080B469 /* NSBundle+Language.m */; };
+		B19155761DD1FA0F0080B469 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B19155781DD1FA0F0080B469 /* Localizable.strings */; };
+		B19155811DD1FBB30080B469 /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = B19155801DD1FBB30080B469 /* AutoGenStrings.py */; };
+		B19155851DD2BBFF0080B469 /* KKLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B19155841DD2BBFF0080B469 /* KKLanguageManager.m */; };
+		B19155AA1DD2F9650080B469 /* KKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B19155A91DD2F9650080B469 /* KKTabBarViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B19155571DD1F99A0080B469 /* KKLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B191555B1DD1F99A0080B469 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B191555D1DD1F99A0080B469 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B191555E1DD1F99A0080B469 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B19155601DD1F99A0080B469 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B19155611DD1F99A0080B469 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B19155641DD1F99A0080B469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B19155661DD1F99A0080B469 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B19155691DD1F99A0080B469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B191556B1DD1F99A0080B469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19155711DD1F9AF0080B469 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
+		B19155721DD1F9AF0080B469 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
+		B19155791DD1FA100080B469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B191557A1DD1FA220080B469 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B191557B1DD1FA220080B469 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B191557C1DD1FA220080B469 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B191557E1DD1FA2B0080B469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B19155801DD1FBB30080B469 /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
+		B19155831DD2BBFF0080B469 /* KKLanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLanguageManager.h; sourceTree = "<group>"; };
+		B19155841DD2BBFF0080B469 /* KKLanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLanguageManager.m; sourceTree = "<group>"; };
+		B19155A81DD2F9650080B469 /* KKTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTabBarViewController.h; sourceTree = "<group>"; };
+		B19155A91DD2F9650080B469 /* KKTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTabBarViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B19155541DD1F99A0080B469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B191554E1DD1F99A0080B469 = {
+			isa = PBXGroup;
+			children = (
+				B19155591DD1F99A0080B469 /* KKLanguage */,
+				B19155581DD1F99A0080B469 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B19155581DD1F99A0080B469 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B19155571DD1F99A0080B469 /* KKLanguage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B19155591DD1F99A0080B469 /* KKLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				B191557F1DD1FBB30080B469 /* RunScript */,
+				B191555D1DD1F99A0080B469 /* AppDelegate.h */,
+				B191555E1DD1F99A0080B469 /* AppDelegate.m */,
+				B19155601DD1F99A0080B469 /* ViewController.h */,
+				B19155611DD1F99A0080B469 /* ViewController.m */,
+				B19155A81DD2F9650080B469 /* KKTabBarViewController.h */,
+				B19155A91DD2F9650080B469 /* KKTabBarViewController.m */,
+				B19155831DD2BBFF0080B469 /* KKLanguageManager.h */,
+				B19155841DD2BBFF0080B469 /* KKLanguageManager.m */,
+				B19155711DD1F9AF0080B469 /* NSBundle+Language.h */,
+				B19155721DD1F9AF0080B469 /* NSBundle+Language.m */,
+				B19155781DD1FA0F0080B469 /* Localizable.strings */,
+				B19155631DD1F99A0080B469 /* Main.storyboard */,
+				B19155661DD1F99A0080B469 /* Assets.xcassets */,
+				B19155681DD1F99A0080B469 /* LaunchScreen.storyboard */,
+				B191556B1DD1F99A0080B469 /* Info.plist */,
+				B191555A1DD1F99A0080B469 /* Supporting Files */,
+			);
+			path = KKLanguage;
+			sourceTree = "<group>";
+		};
+		B191555A1DD1F99A0080B469 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B191555B1DD1F99A0080B469 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B191557F1DD1FBB30080B469 /* RunScript */ = {
+			isa = PBXGroup;
+			children = (
+				B19155801DD1FBB30080B469 /* AutoGenStrings.py */,
+			);
+			path = RunScript;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B19155561DD1F99A0080B469 /* KKLanguage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B191556E1DD1F99A0080B469 /* Build configuration list for PBXNativeTarget "KKLanguage" */;
+			buildPhases = (
+				B19155531DD1F99A0080B469 /* Sources */,
+				B19155541DD1F99A0080B469 /* Frameworks */,
+				B19155551DD1F99A0080B469 /* Resources */,
+				B19155821DD1FBC80080B469 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKLanguage;
+			productName = KKLanguage;
+			productReference = B19155571DD1F99A0080B469 /* KKLanguage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B191554F1DD1F99A0080B469 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Kook;
+				TargetAttributes = {
+					B19155561DD1F99A0080B469 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B19155521DD1F99A0080B469 /* Build configuration list for PBXProject "KKLanguage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = B191554E1DD1F99A0080B469;
+			productRefGroup = B19155581DD1F99A0080B469 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B19155561DD1F99A0080B469 /* KKLanguage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B19155551DD1F99A0080B469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B191556A1DD1F99A0080B469 /* LaunchScreen.storyboard in Resources */,
+				B19155761DD1FA0F0080B469 /* Localizable.strings in Resources */,
+				B19155671DD1F99A0080B469 /* Assets.xcassets in Resources */,
+				B19155651DD1F99A0080B469 /* Main.storyboard in Resources */,
+				B19155811DD1FBB30080B469 /* AutoGenStrings.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B19155821DD1FBC80080B469 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python ${SRCROOT}/${TARGET_NAME}/RunScript/AutoGenStrings.py ${SRCROOT}/${TARGET_NAME} //storyboard翻译脚本\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B19155531DD1F99A0080B469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B19155AA1DD2F9650080B469 /* KKTabBarViewController.m in Sources */,
+				B19155731DD1F9AF0080B469 /* NSBundle+Language.m in Sources */,
+				B19155621DD1F99A0080B469 /* ViewController.m in Sources */,
+				B191555F1DD1F99A0080B469 /* AppDelegate.m in Sources */,
+				B19155851DD2BBFF0080B469 /* KKLanguageManager.m in Sources */,
+				B191555C1DD1F99A0080B469 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B19155631DD1F99A0080B469 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B19155641DD1F99A0080B469 /* Base */,
+				B191557A1DD1FA220080B469 /* zh-Hans */,
+				B191557E1DD1FA2B0080B469 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B19155681DD1F99A0080B469 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B19155691DD1F99A0080B469 /* Base */,
+				B191557B1DD1FA220080B469 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B19155781DD1FA0F0080B469 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B19155791DD1FA100080B469 /* en */,
+				B191557C1DD1FA220080B469 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B191556C1DD1F99A0080B469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B191556D1DD1F99A0080B469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B191556F1DD1F99A0080B469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KKLanguage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kook.KKLanguage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B19155701DD1F99A0080B469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KKLanguage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kook.KKLanguage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B19155521DD1F99A0080B469 /* Build configuration list for PBXProject "KKLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B191556C1DD1F99A0080B469 /* Debug */,
+				B191556D1DD1F99A0080B469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B191556E1DD1F99A0080B469 /* Build configuration list for PBXNativeTarget "KKLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B191556F1DD1F99A0080B469 /* Debug */,
+				B19155701DD1F99A0080B469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B191554F1DD1F99A0080B469 /* Project object */;
+}
