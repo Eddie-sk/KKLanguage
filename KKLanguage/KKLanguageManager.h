@@ -8,38 +8,40 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXTERN NSString *const KKLanguageDidChangeNotification;
+
 typedef NS_ENUM(NSUInteger, KKLanguage) {
-    KKLanguageEnglish,
+    KKLanguageUnknown = 0,
     KKLanguageChinese,
+    KKLanguageEnglish,
     
-    KKLanguageCount
+    // Add other language enum here
+    
+    KKLanguageMax,
 };
 
 @interface KKLanguageManager : NSObject
 
-+ (void)setupLanguage;
++ (void)setUpPreferredLanguage;
 
-/**
- 支持的多语言列表
- 
- @return 多语言列表
- */
-+ (NSArray *)languages;
++ (void)saveLanguage:(KKLanguage)language completion:(void(^)(void))completion;
 
+// @[@"English", @"简体中文"]
++ (NSArray<NSString *>*)supportLanguageDescriptions;
 
-/**
- 选择某语言，设置并保存语言对应的code（语言环境）。 PS：languageString的index等价于languageCode的index
++ (KKLanguage)currentLanguage;
 
- @param index 语言列表（LanguageString）对应的index
- */
-+ (void)saveLanguageOfStringIndex:(NSInteger)index;
++ (KKLanguage)languageTypeWithDescription:(NSString *)languageDes;
 
++ (KKLanguage)languageTypeWithShorthand:(NSString *)languageShorthand;
 
-/**
- 用语标记当前语言环境对应的index
+// "en" "zh-Hans-CN"
++ (NSString *)languageShorthand:(KKLanguage)language;
 
- @return index
- */
-+ (NSInteger)currentLanguageIndex;
+// "English" "简体中文"
++ (NSString *)languageDescription:(KKLanguage)language;
+
++ (NSString *)currentLanguageShorthand;
 
 @end
+

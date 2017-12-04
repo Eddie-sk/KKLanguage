@@ -9,60 +9,145 @@
 #import "KKLanguageManager.h"
 #import "NSBundle+Language.h"
 
-static NSString *const KKLanguageKey = @"KKLanguageKey";
-static NSString *const KKLanguageCode[] = {@"en", @"zh-Hans"};
-static NSString *const KKLanguageStrings[] = {@"English", @"简体中文"};
+static NSDictionary *kLanguageDic = nil;
 
-#define KKCurrentLanguageCode [[NSUserDefaults standardUserDefaults] objectForKey:@"KKLanguageKey"];
-#define KKSaveLanguageCode(languageCode) [[NSUserDefaults standardUserDefaults] setValue:languageCode forKey:@"KKLanguageKey"]; \
-        [[NSUserDefaults standardUserDefaults] synchronize];
+static NSString *const kLanguageInAppKey = @"kLanguageInAppKey";
+NSString *const KKLanguageDidChangeNotification = @"KKLanguageDidChangeNotification";
 
+static NSString *kUnknownLanguage = @"unknown";
+
+static NSString *kEnglishShorthand = @"en";
+static NSString *kChineseShorthand = @"zh-Hans";
+
+static NSString *kEnglishDesc = @"English";
+static NSString *kChineseDesc = @"简体中文";
 
 @implementation KKLanguageManager
 
-+ (void)setupLanguage {
-    NSString *currentLanguage = [[NSUserDefaults standardUserDefaults] objectForKey:KKLanguageKey];
++ (void)setUpPreferredLanguage {
+    NSString *languageInApp = [[NSUserDefaults standardUserDefaults] objectForKey:kLanguageInAppKey];
+    NSArray *languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+    if (!languageInApp) {
+        NSString *prefferdLanguage = [self _verifyLanguage:languages.firstObject];
+        languageInApp = prefferdLanguage;
+        [self _savePreferredLanguage:languageInApp];
+    }
     
-    if (!currentLanguage) {
-        NSArray *languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-        if (languages.count > 0) {
-            currentLanguage = languages[0];
-            KKSaveLanguageCode(currentLanguage)
+    [NSBundle setLanguage:languageInApp];
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        kLanguageDic = @{@(KKLanguageUnknown): kUnknownLanguage,
+                         @(KKLanguageEnglish): kEnglishShorthand,
+                         @(KKLanguageChinese): kChineseShorthand};
+    });
+}
+
++ (KKLanguage)currentLanguage {
+    NSString *lanShorthand = [self _preferredLanguage:kLanguageInAppKey];
+    return [self languageTypeWithShorthand:lanShorthand];
+}
+
++ (NSArray<NSString *>*)supportLanguageDescriptions {
+    return @[kChineseDesc, kEnglishDesc];
+}
+
++ (void)saveLanguage:(KKLanguage)language completion:(void (^)(void))completion {
+    if (language == KKLanguageUnknown || language >= KKLanguageMax) {
+        return;
+    }
+    if (language == [KKLanguageManager currentLanguage]) {
+        return;
+    }
+    NSString *lanShorthand = kLanguageDic[@(language)];
+    if (lanShorthand) {
+        [self _savePreferredLanguage:lanShorthand];
+        [NSBundle setLanguage:lanShorthand];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:KKLanguageDidChangeNotification object:@(language)];
+        });
+        if (completion) {
+            completion();
         }
     }
-    
-    [NSBundle setLanguage:currentLanguage];
 }
 
-+ (NSArray *)languages {
-    NSMutableArray *languages = [NSMutableArray array];
-    
-    for (int i = 0 ; i < KKLanguageCount; i++) {
-        NSString *language = NSLocalizedString(KKLanguageStrings[i], @"");
-        [languages addObject:language];
++ (KKLanguage)languageTypeWithDescription:(NSString *)languageDes {
+    if (!languageDes) {
+        return KKLanguageUnknown;
     }
-    return [languages copy];
+    if ([languageDes isEqualToString:kChineseDesc]) {
+        return KKLanguageChinese;
+    } else if ([languageDes isEqualToString:kEnglishDesc]) {
+        return KKLanguageEnglish;
+    }
+    return KKLanguageUnknown;
 }
 
-+ (void)saveLanguageOfStringIndex:(NSInteger)index {
-    if (index >= 0 && index < KKLanguageCount) {
-        NSString *languageCode = KKLanguageCode[index];
-        KKSaveLanguageCode(languageCode)
-        [NSBundle setLanguage:languageCode];
++ (KKLanguage)languageTypeWithShorthand:(NSString *)languageShorthand {
+    if (!languageShorthand) {
+        return KKLanguageUnknown;
+    }
+    if ([languageShorthand isEqualToString:kChineseShorthand]) {
+        return KKLanguageChinese;
+    } else if ([languageShorthand isEqualToString:kEnglishShorthand]) {
+        return KKLanguageEnglish;
+    }
+    return KKLanguageUnknown;
+}
+
++ (NSString *)languageShorthand:(KKLanguage)language {
+    switch (language) {
+        case KKLanguageEnglish:
+            return kEnglishShorthand;
+        case KKLanguageChinese:
+            return kChineseShorthand;
+        default:
+            return kUnknownLanguage;
     }
 }
 
-+ (NSInteger)currentLanguageIndex {
-    NSInteger index = 0;
-    NSString *currentLanguageCode = KKCurrentLanguageCode;
-    for (int i = 0; i < KKLanguageCount; i++) {
-        NSString *languageCode = KKLanguageCode[i];
-        if ([currentLanguageCode isEqualToString:languageCode]) {
-            index = i;
-            break;
-        }
++ (NSString *)languageDescription:(KKLanguage)language {
+    switch (language) {
+        case KKLanguageEnglish:
+            return kEnglishDesc;
+        case KKLanguageChinese:
+            return kChineseDesc;
+        default:
+            return kUnknownLanguage;
     }
-    return index;
+}
+
++ (NSString *)currentLanguageShorthand {
+    KKLanguage language = [KKLanguageManager currentLanguage];
+    return [self languageShorthand:language];
+}
+#pragma mark - Private Methods
+
++ (void)_savePreferredLanguage:(NSString *)prefferdLanguage {
+    if (!prefferdLanguage) {
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setValue:prefferdLanguage forKey:kLanguageInAppKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)_preferredLanguage:(NSString *)key {
+    if (!key) {
+        return nil;
+    }
+    return [[NSUserDefaults standardUserDefaults] stringForKey:key];
+}
+
++ (NSString *)_verifyLanguage:(NSString *)languageStr {
+    if (!languageStr || languageStr.length == 0) {
+        return kEnglishShorthand;
+    }
+    if ([languageStr hasPrefix:@"zh"]) {
+        return kChineseShorthand;
+    }
+    return kEnglishShorthand;
 }
 
 @end
+

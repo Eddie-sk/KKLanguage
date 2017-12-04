@@ -13,7 +13,7 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        [KKLanguageManager setupLanguage];
+        [KKLanguageManager setUpPreferredLanguage];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
